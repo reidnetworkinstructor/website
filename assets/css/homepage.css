@@ -1,0 +1,68 @@
+.hero {
+  background: linear-gradient(to bottom right, #111122, #0d0d0f);
+  text-align: center;
+  padding: 5rem 2rem;
+}
+.glow-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff88, 0 0 20px #00ffff44;
+}
+.tagline {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #cccccc;
+}
+.highlight {
+  color: #00ffff;
+}
+.cta-button {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #00ffff;
+  color: #0d0d0f;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.glow-hover:hover {
+  box-shadow: 0 0 12px #00ffff, 0 0 24px #00ffff77;
+  background-color: #00dddd;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.phase-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.phase-tile {
+  background-color: #1a1a1d;
+  padding: 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.glow-tile:hover {
+  box-shadow: 0 0 12px #00ffff88;
+  transform: translateY(-5px);
+}
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.875rem;
+  color: #999;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}

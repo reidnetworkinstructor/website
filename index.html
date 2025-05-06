@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hoodie Challenge – Zero to Hoodie in 90 Days</title>
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/homepage.css" />
+  <style>
+    /* Sticky Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background-color: #0e0e10;
+      padding: 1rem 2rem;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+    .navbar a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 1rem;
+    }
+
+    /* Tier Table */
+    .tier-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 3rem;
+      font-size: 0.95rem;
+    }
+    .tier-table th, .tier-table td {
+      border: 1px solid #444;
+      padding: 0.75rem;
+      text-align: center;
+    }
+    .tier-table th {
+      background-color: #1f1f2a;
+      color: #00ffff;
+    }
+    .tier-table td {
+      background-color: #141417;
+    }
+    .tier-table tr:nth-child(even) td {
+      background-color: #1a1a1d;
+    }
+
+    .feature-title {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 1.75rem;
+      color: #00ffff;
+      text-shadow: 0 0 6px #00ffff99;
+    }
+
+    /* CTA Buttons in Table */
+    .cta-button-tier {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      margin-top: 0.4rem;
+      background-color: #00ffff;
+      color: #0e0e10;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .cta-button-tier:hover {
+      background-color: #00dddd;
+    }
+
+    /* Book Flyer */
+    .promo-flyer {
+      margin: 4rem auto 2rem;
+      max-width: 300px;
+      text-align: center;
+    }
+    .promo-flyer img {
+      width: 100%;
+      border: 2px solid #00ffff;
+      border-radius: 8px;
+      box-shadow: 0 0 12px #00ffff55;
+    }
+    .promo-flyer p {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    /* Nav branding */
+    .nav-logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #888;
+      padding-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sticky Nav -->
+  <nav class="navbar">
+    <div class="nav-logo">Hoodie Challenge</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="network.html">Network+</a>
+      <a href="security.html">Security+</a>
+      <a href="https://substack.com/@reidbt" target="_blank">Substack</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container fade-in">
+      <h1 class="glow-text">Hoodie Challenge</h1>
+      <p class="tagline">From Zero to Hoodie in <span class="highlight">90 Days</span></p>
+      <a href="roadmap.html" class="cta-button glow-hover">Start the Challenge</a>
+    </div>
+  </header>
+
+  <!-- Phases -->
+  <section class="phases fade-in">
+    <div class="container">
+      <h2 class="section-title">Your Path to Mastery</h2>
+      <div class="phase-grid">
+        <a href="network.html" class="phase-tile glow-tile"><h3>Network+</h3><p>Days 1–30</p></a>
+        <a href="security.html" class="phase-tile glow-tile"><h3>Security+</h3><p>Days 31–45</p></a>
+        <div class="phase-tile glow-tile"><h3>Azure Fundamentals</h3><p>Days 46–50</p></div>
+        <div class="phase-tile glow-tile"><h3>Linux / Python / Traffic Analysis</h3><p>Days 51–90</p></div>
+        <a href="https://reidnetworkinstructor.github.io/MDR/" target="_blank" class="phase-tile glow-tile"><h3>Play Network+ MDR</h3><p>Retro Study Game</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tier Table -->
+  <section class="container fade-in">
+    <h2 class="feature-title">Choose Your Challenge Tier</h2>
+    <table class="tier-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Free Challenge<br><a href="https://open.substack.com/pub/reidbt/p/welcome-to-the-hoodie-challenge" class="cta-button-tier">Join Now</a></th>
+          <th>Premium Challenge<br><a href="https://open.substack.com/pub/reidbt/p/welcome-to-the-hoodie-challenge" class="cta-button-tier">Join Now</a></th>
+          <th>Bootcamp<br><a href="https://bowtiedcyber.com" class="cta-button-tier">Book a Call</a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Notes & Video Lessons</td><td>✔️</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Easy Practice Quiz</td><td>✔️</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Specialized Video Games</td><td>✔️</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Discord Community Access</td><td>✔️</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Flashcards</td><td>❌</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Free Lab Access</td><td>❌</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Bonus Lab</td><td>❌</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>Intermediate & Hard Quizzes</td><td>❌</td><td>✔️</td><td>✔️</td></tr>
+        <tr><td>LMS Progress Tracking</td><td>❌</td><td>❌</td><td>✔️</td></tr>
+        <tr><td>Custom AI Tools</td><td>❌</td><td>❌</td><td>✔️</td></tr>
+        <tr><td>Personalized 1-on-1 Coaching</td><td>❌</td><td>❌</td><td>✔️</td></tr>
+        <tr><td>Career Strategy & Job Support</td><td>❌</td><td>❌</td><td>✔️</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Book Promo -->
+  <div class="promo-flyer fade-in">
+    <a href="https://amzn.to/42FSIIp" target="_blank">
+      <img src="assets/img/book-cover.png" alt="90 Day Roadmap Book">
+    </a>
+    <p>Check out the 90 Day Roadmap Book</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer fade-in">
+    <p>&copy; 2025 Hoodie Challenge – Built for the next generation of IT pros.</p>
+  </footer>
+
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>
