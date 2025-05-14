@@ -1,77 +1,220 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Security+ – Hoodie Challenge</title><style>
-body { background:#0e0e10; color:#fff; font-family:sans-serif; margin:0; }
-.container { max-width:1000px; margin:0 auto; padding:2rem; }
-header { text-align:center; padding:3rem 2rem 1rem; }
-h1 { font-size:2.5rem; color:#00ffff; text-shadow:0 0 8px #00ffffaa; }
-.days-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; margin-top:2rem; }
-.day-tile { background:#1a1a1d; padding:1.25rem 1.5rem; border-left:4px solid #00ffff; border-radius:6px;
-  transition:.3s; text-decoration:none; color:#fff; display:block; }
-.day-tile:hover { transform:translateY(-3px); box-shadow:0 0 12px #00ffff44; }
-.day-title { font-weight:bold; margin-bottom:0.4rem; }
-.day-desc { font-size:0.9rem; color:#bbb; }
-</style></head><body>
-<header><div class="container"><h1>Security+ Roadmap</h1><p>Days 31–45</p></div></header>
-<section class="days-grid container">
-    <a class="day-tile" href="#" target="_blank">
-      <div class="day-title">Day 31 – Governance & Risk Basics</div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Security+ – Hoodie Challenge</title>
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <style>
+    body {
+      background: #0e0e10;
+      color: #fff;
+      font-family: sans-serif;
+      margin: 0;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      background-color: #0e0e10;
+      padding: 1rem 2rem;
+      z-index: 999;
+      border-bottom: 1px solid #222;
+    }
+    .navbar a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-right: 1.5rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffffaa;
+    }
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .day-tile {
+      background: #1a1a1d;
+      padding: 1.5rem;
+      border-left: 4px solid #00ffff;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+      position: relative;
+    }
+    .day-tile:hover {
+      background: #222;
+      transform: translateY(-3px);
+      box-shadow: 0 0 12px #00ffff44;
+    }
+    .day-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    .day-desc {
+      font-size: 0.9rem;
+      color: #bbb;
+      margin-top: 0.25rem;
+    }
+    .progress-box {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #00ffff;
+      border-radius: 3px;
+      cursor: pointer;
+      background-color: transparent;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .day-tile.glowing {
+      background: #1e1e22;
+      box-shadow: 0 0 10px #00ffffaa;
+    }
+    .day-tile.glowing .progress-box {
+      background-color: #00ffff;
+      box-shadow: 0 0 6px #00ffff99;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">🏠 Home</a>
+    <a href="roadmap.html">🗺️ Roadmap</a>
+    <a href="network.html">📡 Network+</a>
+  </div>
+
+  <header>
+    <div class="container">
+      <h1>Security+ Roadmap</h1>
+      <p class="page-subtitle">Days 31–45</p>
+    </div>
+  </header>
+
+  <section class="days-grid container">
+
+    <a class="day-tile" data-day="31" href="https://hoodiechallenge.substack.com/p/day-31-security-foundation-and-threat" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 31)"></div>
+      <div class="day-title">Day 31 – Security Foundation and Threat Actors</div>
       <div class="day-desc">Risk types, BIA, control types</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
-      <div class="day-title">Day 32 – Security Frameworks & Compliance</div>
+    <a class="day-tile" data-day="32" href="https://hoodiechallenge.substack.com/p/day-32-frameworks-laws-and-compliance?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 32)"></div>
+      <div class="day-title">Day 32 – Frameworks, Laws, and Compliance</div>
       <div class="day-desc">NIST, ISO, GDPR, HIPAA</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
-      <div class="day-title">Day 33 – Authentication & Identity Concepts</div>
+    <a class="day-tile" data-day="33" href="https://hoodiechallenge.substack.com/p/day-33-identity-authentication-and?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 33)"></div>
+      <div class="day-title">Day 33 – Identity, Authentication & Federation</div>
       <div class="day-desc">AAA, SAML, OAuth, MFA</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
-      <div class="day-title">Day 34 – Access Control Models</div>
+    <a class="day-tile" data-day="34" href="https://hoodiechallenge.substack.com/p/day-34-access-control-models-and?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 34)"></div>
+      <div class="day-title">Day 34 – Access Control Models & Zero Trust</div>
       <div class="day-desc">RBAC, ABAC, DAC, Zero Trust</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
-      <div class="day-title">Day 35 – Cryptography Essentials</div>
+    <a class="day-tile" data-day="35" href="https://hoodiechallenge.substack.com/p/day-35-cryptography-and-pki-mastery?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 35)"></div>
+      <div class="day-title">Day 35 – Cryptography & PKI Mastery</div>
       <div class="day-desc">Symmetric, hashing, PKI, certs</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
+    <a class="day-tile" data-day="36" href="https://hoodiechallenge.substack.com/p/day-36-wireless-and-mobile-security?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 36)"></div>
       <div class="day-title">Day 36 – Wireless & Mobile Security</div>
       <div class="day-desc">WPA3, BYOD, MDM, containerization</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
-      <div class="day-title">Day 37 – Secure Network Design</div>
+    <a class="day-tile" data-day="37" href="https://hoodiechallenge.substack.com/p/day-37-secure-network-architecture?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 37)"></div>
+      <div class="day-title">Day 37 – Secure Network Architecture</div>
       <div class="day-desc">DMZ, honeypots, VLAN, VPN, NAC</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
-      <div class="day-title">Day 38 – Application Security</div>
+    <a class="day-tile" data-day="38" href="https://hoodiechallenge.substack.com/p/day-38-app-sec-sdlc-and-owasp-10?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 38)"></div>
+      <div class="day-title">Day 38 – App Sec, SDLC & OWASP 10</div>
       <div class="day-desc">OWASP, APIs, DevSecOps</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
-      <div class="day-title">Day 39 – Security Operations</div>
+    <a class="day-tile" data-day="39" href="https://hoodiechallenge.substack.com/p/day-39-security-operations-and-monitoring?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 39)"></div>
+      <div class="day-title">Day 39 – Security Operations & Monitoring</div>
       <div class="day-desc">SIEM, SOAR, threat hunting</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
+    <a class="day-tile" data-day="40" href="https://hoodiechallenge.substack.com/p/day-40-incident-response-and-forensics?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 40)"></div>
       <div class="day-title">Day 40 – Incident Response & Forensics</div>
       <div class="day-desc">Chain of custody, tools, IR process</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
-      <div class="day-title">Day 41 – Physical & Cloud Security</div>
+    <a class="day-tile" data-day="41" href="https://hoodiechallenge.substack.com/p/day-41-physical-embedded-and-cloud?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 41)"></div>
+      <div class="day-title">Day 41 – Physical, Embedded & Cloud Security</div>
       <div class="day-desc">Locks, HVAC, IoT, CASB</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
+    <a class="day-tile" data-day="42" href="https://hoodiechallenge.substack.com/p/day-42-trial-by-fire-full-length?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 42)"></div>
       <div class="day-title">Day 42 – Practice Exam 1</div>
       <div class="day-desc">Simulated full-length test</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
+    <a class="day-tile" data-day="43" href="https://hoodiechallenge.substack.com/p/day-43-deeper-cuts-full-length-practice?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 43)"></div>
       <div class="day-title">Day 43 – Practice Exam 2</div>
       <div class="day-desc">Additional practice test</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
+    <a class="day-tile" data-day="44" href="https://hoodiechallenge.substack.com/p/day-44-final-boss-mode-practice-gauntlet?r=50w0wr" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 44)"></div>
       <div class="day-title">Day 44 – Final Review</div>
       <div class="day-desc">Confidence check & summary</div>
     </a>
-    <a class="day-tile" href="#" target="_blank">
+    <a class="day-tile" data-day="45" href="https://open.substack.com/pub/hoodiechallenge/p/day-45-comptia-test-day?r=50w0wr&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" target="_blank">
+      <div class="progress-box" onclick="toggleProgress(event, 45)"></div>
       <div class="day-title">Day 45 – Exam Day</div>
       <div class="day-desc">CompTIA Security+ certification</div>
     </a>
-</section></body></html>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tiles = document.querySelectorAll(".day-tile");
+      const completedDays = JSON.parse(localStorage.getItem("completedDays") || "[]");
+
+      tiles.forEach(tile => {
+        const day = parseInt(tile.dataset.day);
+        const progressBox = tile.querySelector(".progress-box");
+
+        if (completedDays.includes(day)) {
+          tile.classList.add("glowing");
+        }
+
+        progressBox.addEventListener("click", (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+
+          const index = completedDays.indexOf(day);
+          if (index === -1) {
+            completedDays.push(day);
+            tile.classList.add("glowing");
+          } else {
+            completedDays.splice(index, 1);
+            tile.classList.remove("glowing");
+          }
+          localStorage.setItem("completedDays", JSON.stringify(completedDays));
+        });
+      });
+    });
+  </script>
+</body>
+</html>
