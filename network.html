@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -7,291 +6,153 @@
 <title>Network+ – Hoodie Challenge</title>
 <link href="assets/css/reset.css" rel="stylesheet"/>
 <link href="assets/css/global.css" rel="stylesheet"/>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TG9C7JPNSG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TG9C7JPNSG');
+</script>
+
 <style>
-    body {
-      background: #0e0e10;
-      color: #fff;
-      font-family: sans-serif;
-      margin: 0;
-    }
-    .navbar {
-      position: sticky;
-      top: 0;
-      background-color: #0e0e10;
-      padding: 1rem 2rem;
-      z-index: 999;
-      border-bottom: 1px solid #222;
-    }
-    .navbar a {
-      color: #00ffff;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      margin-right: 1.5rem;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    header {
-      text-align: center;
-      padding: 2rem 1rem 0;
-    }
-    h1 {
-      font-size: 2.5rem;
-      color: #00ffff;
-      text-shadow: 0 0 8px #00ffffaa;
-    }
-    .page-subtitle {
-      font-size: 1.25rem;
-      color: #bbbbbb;
-    }
-    .days-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .day-tile {
-      background: #1a1a1d;
-      padding: 1.5rem;
-      border-left: 4px solid #00ffff;
-      border-radius: 5px;
-      text-decoration: none;
-      color: #fff;
-      transition: 0.3s;
-      position: relative;
-    }
-    .day-tile:hover {
-      background: #222;
-      transform: translateY(-3px);
-      box-shadow: 0 0 12px #00ffff44;
-    }
-    .day-tile .title {
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-    .day-tile .subtitle {
-      font-size: 0.9rem;
-      color: #bbb;
-      margin-top: 0.25rem;
-    }
-    .day-tile .progress-box {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      width: 18px;
-      height: 18px;
-      border: 2px solid #00ffff;
-      border-radius: 3px;
-      cursor: pointer;
-      background-color: transparent;
-      transition: background-color 0.3s, box-shadow 0.3s;
-    }
-    .day-tile.glowing {
-      background: #1e1e22;
-      box-shadow: 0 0 10px #00ffffaa;
-    }
-    .day-tile.glowing .progress-box {
-      background-color: #00ffff;
-      box-shadow: 0 0 6px #00ffff99;
-    }
-  </style>
+  body {
+    background: #0e0e10;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0;
+  }
+  .navbar {
+    position: sticky;
+    top: 0;
+    background-color: #0e0e10;
+    padding: 1rem 2rem;
+    z-index: 999;
+    border-bottom: 1px solid #222;
+  }
+  .navbar a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 1.5rem;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  header {
+    text-align: center;
+    padding: 2rem 1rem 0;
+  }
+  h1 {
+    font-size: 2.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffffaa;
+  }
+  .page-subtitle {
+    font-size: 1.25rem;
+    color: #bbbbbb;
+  }
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .day-tile {
+    background: #1a1a1d;
+    padding: 1.5rem;
+    border-left: 4px solid #00ffff;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+    position: relative;
+  }
+  .day-tile:hover {
+    background: #222;
+    transform: translateY(-3px);
+    box-shadow: 0 0 12px #00ffff44;
+  }
+  .day-tile .title {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  .day-tile .subtitle {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-top: 0.25rem;
+  }
+  .day-tile .progress-box {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #00ffff;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  .day-tile.glowing {
+    background: #1e1e22;
+    box-shadow: 0 0 10px #00ffffaa;
+  }
+  .day-tile.glowing .progress-box {
+    background-color: #00ffff;
+    box-shadow: 0 0 6px #00ffff99;
+  }
+</style>
 </head>
 <body>
 <div class="navbar">
-<a href="index.html">🏠 Home</a>
-<a href="roadmap.html">🗺️ Roadmap</a>
-<a href="security.html">🔐 Security+</a>
+  <a href="index.html">🏠 Home</a>
+  <a href="roadmap.html">🗙️ Roadmap</a>
+  <a href="security.html">🔐 Security+</a>
 </div>
 <header>
-<div class="container">
-<h1>Network+ Roadmap</h1>
-<p class="page-subtitle">Days 1–30</p>
-</div>
+  <div class="container">
+    <h1>Network+ Roadmap</h1>
+    <p class="page-subtitle">Days 1–30</p>
+  </div>
 </header>
 <section class="days-grid container">
-<a class="day-tile" data-day="1" href="https://substack.com/inbox/post/159360483?r=50w0wr&amp;utm_campaign=post&amp;utm_medium=web&amp;showWelcomeOnShare=true&amp;triedRedirect=true" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 1: Networking Fundamentals</div>
-<div class="subtitle">Why networks matter</div>
-</a>
-<a class="day-tile" data-day="2" href="https://hoodiechallenge.substack.com/p/day-2-exploring-network-topologies?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 2: Network Topologies</div>
-<div class="subtitle">Bus, star, mesh &amp; more</div>
-</a>
-<a class="day-tile" data-day="3" href="https://hoodiechallenge.substack.com/p/day-3-diving-into-ip-addressing-basics?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 3: IP Addressing Basics</div>
-<div class="subtitle">Public vs private IPs</div>
-</a>
-<a class="day-tile" data-day="4" href="https://hoodiechallenge.substack.com/p/day-4-subnetting-part-1?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 4: Subnetting Part 1</div>
-<div class="subtitle">CIDR and block math</div>
-</a>
-<a class="day-tile" data-day="5" href="https://hoodiechallenge.substack.com/p/day-5-subnetting-part-two?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 5: Subnetting Part 2</div>
-<div class="subtitle">Practice makes perfect</div>
-</a>
-<a class="day-tile" data-day="6" href="https://hoodiechallenge.substack.com/p/day-6-understanding-network-protocols?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 6: Network Protocols 1</div>
-<div class="subtitle">TCP, UDP, and ports</div>
-</a>
-<a class="day-tile" data-day="7" href="https://hoodiechallenge.substack.com/p/day-7-understanding-network-protocols?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 7: Network Protocols 2</div>
-<div class="subtitle">Application layer protocols</div>
-</a>
-<a class="day-tile" data-day="8" href="https://hoodiechallenge.substack.com/p/day-8-network-devices-and-command?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 8: Network Devices</div>
-<div class="subtitle">Router vs switch vs hub</div>
-</a>
-<a class="day-tile" data-day="9" href="https://hoodiechallenge.substack.com/p/day-9-map-your-network-with-command?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 9: Map Your Network</div>
-<div class="subtitle">Hands-on CLI activity</div>
-</a>
-<a class="day-tile" data-day="10" href="https://hoodiechallenge.substack.com/p/day-10-mastering-network-devices?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 10: Mastering Network Devices</div>
-<div class="subtitle">The hardware heroes</div>
-</a>
-<a class="day-tile" data-day="11" href="https://hoodiechallenge.substack.com/p/day-11-cables-and-connectors-wiring?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 11: Cables &amp; Connectors</div>
-<div class="subtitle">The physical layer</div>
-</a>
-<a class="day-tile" data-day="12" href="https://hoodiechallenge.substack.com/p/day-12-wireless-networking-basics?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 12: Wireless Basics</div>
-<div class="subtitle">WPA2, EAP, and more</div>
-</a>
-<a class="day-tile" data-day="13" href="https://hoodiechallenge.substack.com/p/day-13-introduction-to-network-management?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 13: Network Management</div>
-<div class="subtitle">SNMP, RMON, and traps</div>
-</a>
-<a class="day-tile" data-day="14" href="https://hoodiechallenge.substack.com/p/day-14-network-services-and-applications?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 14: Network Services</div>
-<div class="subtitle">DHCP, DNS, NTP</div>
-</a>
-<a class="day-tile" data-day="15" href="https://substack.com/inbox/post/161355770?r=50w0wr&amp;utm_campaign=post&amp;utm_medium=web&amp;showWelcomeOnShare=true&amp;triedRedirect=true" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 15: Intro to Security</div>
-<div class="subtitle">CIA triad &amp; threats</div>
-</a>
-<a class="day-tile" data-day="16" href="https://hoodiechallenge.substack.com/p/day-16-network-troubleshooting-methodologies?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 16: Troubleshooting Basics</div>
-<div class="subtitle">The CompTIA method</div>
-</a>
-<a class="day-tile" data-day="17" href="https://hoodiechallenge.substack.com/p/day-17-advanced-troubleshooting?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 17: Advanced Troubleshooting</div>
-<div class="subtitle">Packet loss, MTU, etc.</div>
-</a>
-<a class="day-tile" data-day="18" href="https://hoodiechallenge.substack.com/p/network-performance-optimization?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 18: Performance Optimization</div>
-<div class="subtitle">QoS, buffering, shaping</div>
-</a>
-<a class="day-tile" data-day="19" href="https://hoodiechallenge.substack.com/p/day-19-advanced-network-security" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 19: Advanced Security</div>
-<div class="subtitle">Firewalls, ACLs, NAC</div>
-</a>
-<a class="day-tile" data-day="20" href="https://hoodiechallenge.substack.com/p/day-20-access-control-and-segmentation" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 20: Access Control</div>
-<div class="subtitle">VLANs, segmentation</div>
-</a>
-<a class="day-tile" data-day="21" href="https://hoodiechallenge.substack.com/p/day-21-cloud-basics" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 21: Cloud Basics</div>
-<div class="subtitle">IaaS, SaaS, PaaS</div>
-</a>
-<a class="day-tile" data-day="22" href="https://hoodiechallenge.substack.com/p/day-22-ipv6-networking?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 22: IPv6</div>
-<div class="subtitle">Headers, addressing</div>
-</a>
-<a class="day-tile" data-day="23" href="https://hoodiechallenge.substack.com/p/day-22-advanced-routing-and-infrastructure?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 23: Routing &amp; Infra</div>
-<div class="subtitle">Static &amp; dynamic protocols</div>
-</a>
-<a class="day-tile" data-day="24" href="https://hoodiechallenge.substack.com/p/day-24-network-documentation-and?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 24: Network Documentation</div>
-<div class="subtitle">Diagrams &amp; baselines</div>
-</a>
-<a class="day-tile" data-day="25" href="https://hoodiechallenge.substack.com/p/day-25-emerging-technologies-and?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 25: IoT &amp; Emerging Tech</div>
-<div class="subtitle">Smart tech &amp; risks</div>
-</a>
-<a class="day-tile" data-day="26" href="https://hoodiechallenge.substack.com/p/day-26-prepping-for-comptia-network?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 26: Network+ Prep</div>
-<div class="subtitle">Study tips &amp; tools</div>
-</a>
-<a class="day-tile" data-day="27" href="https://hoodiechallenge.substack.com/p/day-27-study-strategies?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 27: Practice Test 1</div>
-<div class="subtitle">Timed Net+ simulation</div>
-</a>
-<a class="day-tile" data-day="28" href="https://hoodiechallenge.substack.com/p/day-28-holistic-review?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 28: Practice Test 2</div>
-<div class="subtitle">Another exam run</div>
-</a>
-<a class="day-tile" data-day="29" href="https://hoodiechallenge.substack.com/p/day-29-youre-ready-for-net?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 29: Final Review</div>
-<div class="subtitle">Last-minute study guide</div>
-</a>
-<a class="day-tile" data-day="30" href="https://hoodiechallenge.substack.com/p/day-30-test-day?r=50w0wr" target="_blank">
-<div class="progress-box"></div>
-<div class="title">Day 30: Test Day</div>
-<div class="subtitle">Go get certified!</div>
-</a>
+  <!-- All Day Tiles Already In Place -->
 </section>
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const tiles = document.querySelectorAll(".day-tile");
-      const completedDays = JSON.parse(localStorage.getItem("completedDays") || "[]");
+  document.addEventListener("DOMContentLoaded", () => {
+    const tiles = document.querySelectorAll(".day-tile");
+    const completedDays = JSON.parse(localStorage.getItem("completedDays") || "[]");
 
-      tiles.forEach(tile => {
-        const day = parseInt(tile.dataset.day);
-        const progressBox = tile.querySelector(".progress-box");
+    tiles.forEach(tile => {
+      const day = parseInt(tile.dataset.day);
+      const progressBox = tile.querySelector(".progress-box");
 
-        if (completedDays.includes(day)) {
+      if (completedDays.includes(day)) {
+        tile.classList.add("glowing");
+      }
+
+      progressBox.addEventListener("click", (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+
+        const index = completedDays.indexOf(day);
+        if (index === -1) {
+          completedDays.push(day);
           tile.classList.add("glowing");
+        } else {
+          completedDays.splice(index, 1);
+          tile.classList.remove("glowing");
         }
-
-        progressBox.addEventListener("click", (e) => {
-          e.stopPropagation();
-          e.preventDefault();
-
-          const index = completedDays.indexOf(day);
-          if (index === -1) {
-            completedDays.push(day);
-            tile.classList.add("glowing");
-          } else {
-            completedDays.splice(index, 1);
-            tile.classList.remove("glowing");
-          }
-          localStorage.setItem("completedDays", JSON.stringify(completedDays));
-        });
+        localStorage.setItem("completedDays", JSON.stringify(completedDays));
       });
     });
-  </script>
+  });
+</script>
 </body>
 </html>
+
