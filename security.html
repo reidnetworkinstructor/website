@@ -1,3 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security+ – Hoodie Challenge</title>
+  <link href="assets/css/reset.css" rel="stylesheet" />
+  <link href="assets/css/global.css" rel="stylesheet" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TG9C7JPNSG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TG9C7JPNSG');
+  </script>
+
+  <style>
+    body {
+      background: #0e0e10;
+      color: #fff;
+      font-family: sans-serif;
+      margin: 0;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      background-color: #0e0e10;
+      padding: 1rem 2rem;
+      z-index: 999;
+      border-bottom: 1px solid #222;
+    }
+    .navbar a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-right: 1.5rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #00ffff;
+      text-shadow: 0 0 8px #00ffffaa;
+    }
+    .page-subtitle {
+      font-size: 1.25rem;
+      color: #bbbbbb;
+    }
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .day-tile {
+      background: #1a1a1d;
+      padding: 1.5rem;
+      border-left: 4px solid #00ffff;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+      position: relative;
+    }
+    .day-tile:hover {
+      background: #222;
+      transform: translateY(-3px);
+      box-shadow: 0 0 12px #00ffff44;
+    }
+    .day-tile .title {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    .day-tile .subtitle {
+      font-size: 0.9rem;
+      color: #bbb;
+      margin-top: 0.25rem;
+    }
+    .day-tile .progress-box {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #00ffff;
+      border-radius: 3px;
+      cursor: pointer;
+      background-color: transparent;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .day-tile.glowing {
+      background: #1e1e22;
+      box-shadow: 0 0 10px #00ffffaa;
+    }
+    .day-tile.glowing .progress-box {
+      background-color: #00ffff;
+      box-shadow: 0 0 6px #00ffff99;
+    }
+  </style>
+</head>
+<body>
+<div class="navbar">
+  <a href="index.html">🏠 Home</a>
+  <a href="network.html">🌐 Network+</a>
+  <a href="security.html">🔐 Security+</a>
+</div>
+<header>
+  <div class="container">
+    <h1>Security+ Roadmap</h1>
+    <p class="page-subtitle">Days 31–45</p>
+  </div>
+</header>
 <section class="days-grid container">
   <a class="day-tile" data-day="31" href="#">
     <div class="progress-box"></div>
@@ -75,4 +197,37 @@
     <div class="subtitle">Suit up. It's time.</div>
   </a>
 </section>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tiles = document.querySelectorAll(".day-tile");
+    const completedDays = JSON.parse(localStorage.getItem("completedDays") || "[]");
+
+    tiles.forEach(tile => {
+      const day = parseInt(tile.dataset.day);
+      const progressBox = tile.querySelector(".progress-box");
+
+      if (completedDays.includes(day)) {
+        tile.classList.add("glowing");
+      }
+
+      progressBox.addEventListener("click", (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+
+        const index = completedDays.indexOf(day);
+        if (index === -1) {
+          completedDays.push(day);
+          tile.classList.add("glowing");
+        } else {
+          completedDays.splice(index, 1);
+          tile.classList.remove("glowing");
+        }
+        localStorage.setItem("completedDays", JSON.stringify(completedDays));
+      });
+    });
+  });
+</script>
+</body>
+</html>
+
 
